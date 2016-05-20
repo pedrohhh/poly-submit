@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<script src="../js/jquery-1.11.1.min.js" charset="utf-8"></script>
+<script src="../js/bootstrap.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-readable.min.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<dom-module id="submit-element">
+    <template>
+        <style>
+        </style>
+      
+    </template> 
+     
+    <script>
+        Polymer({
+            is: "submit-element",
+            properties: {
+                id: String,
+                elementstyle: {
+                    type: String,
+                    value: "btn btn-primary"
+                }
+                
+            },
+                        
+            ready: function() {
+                var customInput = document.createElement("input");
+                customInput.setAttribute("id", this.id);
+                customInput.setAttribute("name", this.id);
+                customInput.setAttribute("type", "submit");
+                customInput.setAttribute("class", this.elementstyle);
+                customInput.setAttribute("value", this.value);
+
+                $('body').append(customInput);
+            }
+        });
+        
+
+    </script>
+</dom-module>
